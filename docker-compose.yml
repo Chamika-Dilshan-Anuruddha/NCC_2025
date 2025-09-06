@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend2:
+    build:
+      context: ./backend2
+    ports:
+      - "5000:5000"
+    networks:
+      - appnet
+
+  frontend2:
+    build:
+      context: ./frontend2
+    ports:
+      - "8081:80"
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
